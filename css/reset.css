@@ -1,0 +1,272 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: 'Open Sans', sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+body {
+  -webkit-overflow-scrolling: touch;
+
+  /*   -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; */
+}
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+[hidden] {
+  display: none;
+}
+a,
+li,
+a:active,
+a:hover {
+  outline: 0 !important;
+}
+img {
+  border: 0;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input[type="submit"],
+button,
+.btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    position: relative;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    text-decoration: none;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
+  display: block;
+  width: 100%;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-appearance: none;
+}
+select::-ms-clear,
+input[type="text"]::-ms-clear,
+input[type="password"]::-ms-clear,
+input[type="color"]::-ms-clear,
+input[type="date"]::-ms-clear,
+input[type="datetime"]::-ms-clear,
+input[type="datetime-local"]::-ms-clear,
+input[type="email"]::-ms-clear,
+input[type="month"]::-ms-clear,
+input[type="number"]::-ms-clear,
+input[type="range"]::-ms-clear,
+input[type="search"]::-ms-clear,
+input[type="tel"]::-ms-clear,
+input[type="time"]::-ms-clear,
+input[type="url"]::-ms-clear,
+input[type="week"]::-ms-clear,
+textarea::-ms-clear {
+  display: none;
+}
+textarea {
+  overflow: auto;
+  resize: none;
+}
+input[list]::-webkit-calendar-picker-indicator {
+    display: none;
+    opacity: 0;
+    pointer-events: none
+}
+
+input[list] {
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 5px;
+    padding-right: .5rem
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	display: none;
+	margin: 0;
+}
+input[type=number]{
+	-moz-appearance: textfield;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+a {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
