@@ -619,8 +619,14 @@ html.with-fancybox body.hide-scrollbar {
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
+.wrap:not(.header-fixed) {
+  padding-top: 0 !important;
+}
+.wrap:has(.lead-box) {
+  padding-top: 0 !important;
+}
 .wrap:has(.lead-box) .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -715,6 +721,17 @@ html.with-fancybox body.hide-scrollbar {
 }
 .header {
   z-index: 99;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header-fixed .header {
+  position: fixed;
+  background: var(--clr-bg-light);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 .footer {
   color: var(--clr-base-title);
@@ -790,6 +807,31 @@ html.with-fancybox body.hide-scrollbar {
   -ms-flex-order: 1;
   order: 1;
 }
+.fix-up-button.btn-action-ico.ico-arrow {
+  display: none;
+  -webkit-animation: fadein ease 0.2s;
+  animation: fadein ease 0.2s;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--clr-bg-light);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  position: fixed;
+  bottom: var(--paddingContainer) !important;
+  right: var(--paddingContainer) !important;
+}
+.fix-up-button.btn-action-ico.ico-arrow:before {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.fix-up-button.btn-action-ico.ico-arrow:hover {
+  background: var(--clr-bg-light);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
 .fix-soc-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -829,7 +871,9 @@ html.with-fancybox body.hide-scrollbar {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    width: 402px;
+    max-width: calc(100dvw - var(--paddingContainer) - var(--paddingContainer));
+    left: auto;
     right: 0;
     z-index: 20;
     background: var(--clr-bg-light);
@@ -1304,11 +1348,15 @@ html.with-fancybox body.hide-scrollbar {
 			items styles
 \* ----------------------------------- */
 .sl-wrap .item-tile-player,
-.item-wrap .item-tile-player {
+.item-wrap .item-tile-player,
+.sl-wrap .player-section.type-one-row,
+.item-wrap .player-section.type-one-row {
   margin-bottom: 15px;
 }
 .sl-wrap .item-tile-player:last-child,
-.item-wrap .item-tile-player:last-child {
+.item-wrap .item-tile-player:last-child,
+.sl-wrap .player-section.type-one-row:last-child,
+.item-wrap .player-section.type-one-row:last-child {
   margin-bottom: 0;
 }
 .item-tile-player {
@@ -3200,6 +3248,134 @@ select.form-input:required:invalid {
 .player-section {
   display: block;
   position: relative;
+}
+.player-section.type-one-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+.player-section.type-one-row .media-player,
+.player-section.type-one-row .audio-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.player-section.type-one-row .progress-container {
+  display: none;
+}
+.player-section.type-one-row .player-controls {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+  margin: 0;
+}
+.player-section.type-one-row .player-name {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--clr-base);
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-family: "Merriweather", serif;
+}
+.player-section.type-one-row .player-name * {
+  font-family: "Merriweather", serif;
+}
+.player-section.type-one-row .audio-info {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  min-width: 41px;
+  font-size: 14px;
+  font-family: "Merriweather", serif;
+}
+.player-section.type-one-row .audio-info * {
+  font-family: "Merriweather", serif;
+}
+.player-section.type-one-row .time-display {
+  margin: 0;
+}
+.player-section.type-one-row .current-time {
+  display: none;
+}
+.player-section.type-one-row .control-buttons {
+  margin: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.player-section.type-one-row .control-btn.play-pause-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 0;
+  border: 1px solid var(--clr-base);
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  background: transparent;
+  margin: 0;
+}
+.player-section.type-one-row .control-btn.play-pause-btn:before {
+  background-image: url(../img/icons/play-inner.svg);
+  left: 4px;
+  top: 2px;
+  right: 0;
+  bottom: 0;
+  background-size: 24px auto;
+  -webkit-filter: none;
+  filter: none;
+}
+.player-section.type-one-row .control-btn.play-pause-btn:after {
+  background-image: url(../img/icons/play-inner-active.svg);
+  left: 4px;
+  top: 2px;
+  background-size: 24px auto;
+  -webkit-filter: none;
+  filter: none;
+  opacity: 0;
+}
+.player-section.type-one-row .control-btn.play-pause-btn.active,
+.player-section.type-one-row .control-btn.play-pause-btn:hover {
+  background: var(--clr-border);
+  border-color: var(--clr-border);
+}
+.player-section.type-one-row .control-btn.play-pause-btn.active:before,
+.player-section.type-one-row .control-btn.play-pause-btn:hover:before {
+  opacity: 0;
+}
+.player-section.type-one-row .control-btn.play-pause-btn.active:after,
+.player-section.type-one-row .control-btn.play-pause-btn:hover:after {
+  opacity: 1;
+}
+.player-section.type-one-row .control-btn.play-pause-btn.active:after {
+  background-image: url(../img/icons/player-pause.svg);
+  left: 2px;
+  background-size: 18px auto;
+  -webkit-filter: var(--filterAttToLight);
+  filter: var(--filterAttToLight);
 }
 .player-section .player-controls {
   margin-bottom: 15px;

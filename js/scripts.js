@@ -1,4 +1,41 @@
 document.addEventListener("DOMContentLoaded", function() {
+	
+	//fixed header
+	const header = document.querySelector(".header");
+	const content = document.querySelector(".wrap");
+	
+	if (header && content) {
+	  const updatePadding = () => {
+		const headerHeight = header.offsetHeight;
+		content.style.paddingTop = headerHeight + "px";
+		console.log("Header height:", headerHeight); 
+	  };
+	  updatePadding();
+	  window.addEventListener('resize', updatePadding);
+	  window.addEventListener('load', updatePadding);
+	}
+});
+ window.addEventListener("scroll", function () {
+	const windowTop = window.pageYOffset;
+	if (windowTop > 0) {
+		document.querySelector(".wrap").classList.add("header-fixed");
+	} else {
+		document.querySelector(".wrap").classList.remove("header-fixed");
+	}
+
+	//button scroll up
+	let buttonUp = document.getElementById("up");
+	window.onscroll = function() {scrollFunction()}
+	function scrollFunction() {
+		if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+			buttonUp.style.display = "block";
+		} else {
+			buttonUp.style.display = "none";
+		}
+	}
+	scrollFunction()
+})
+document.addEventListener("DOMContentLoaded", function() {
 
 	//fancybox
 	Fancybox.bind("[data-fancybox]", {
@@ -24,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 		},
 	});
+
+
 
 	//btn tgl and add
 	let tglButtons = document.querySelectorAll('.js-btn-tgl')
