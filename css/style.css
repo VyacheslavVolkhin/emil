@@ -1758,6 +1758,21 @@ html.with-fancybox body.hide-scrollbar {
   margin-bottom: var(--sectionMargin);
   position: relative;
 }
+.tiles-box .swiper-autoheight {
+  height: auto;
+}
+.tiles-box .swiper-autoheight .swiper {
+  height: auto;
+}
+.tiles-box .swiper-autoheight .swiper-wrapper {
+  height: auto;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.tiles-box .swiper-autoheight .swiper-slide {
+  height: auto;
+}
 .tiles-box .items-wrap,
 .tiles-box .slider-inner-wrap {
   margin-top: var(--sectionMarginSmall);
