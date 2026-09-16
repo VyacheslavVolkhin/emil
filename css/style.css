@@ -4180,7 +4180,6 @@ table:has(col.text-center:nth-child(30)) td:nth-child(30) {
 /* base styles */
 :where([class*="tile-"]),
 :where([class*="-wrap"]),
-:where([class*="item-tile-"]),
 :where([class*="elm-"]) {
   display: block;
   -ms-flex-negative: 0;
